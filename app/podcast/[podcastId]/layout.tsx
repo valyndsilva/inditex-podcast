@@ -1,5 +1,7 @@
 "use client";
 
+import { Sidebar } from "@/app/components";
+
 interface Props {
   children: React.ReactNode;
   params: any;
@@ -10,6 +12,7 @@ export default function RootLayout({ children, params }: Props) {
 
   return (
     <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 py-10 w-full max-w-7xl mx-auto">
+      <Sidebar podcastId={podcastId} />
       {children}
     </div>
   );
