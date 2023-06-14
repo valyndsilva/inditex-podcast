@@ -18,7 +18,7 @@ export default function MainView({}: Props) {
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
         // Make the API call to fetch the list of podcasts
-        const response = await fetch("api/podcasts", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/podcasts`, {
           next: { revalidate: 86400 },
         }); //revalidate response after 24 hrs has passed
         const podcastsData = await response.json();

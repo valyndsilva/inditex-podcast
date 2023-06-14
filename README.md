@@ -6,6 +6,12 @@
 npm install
 ```
 
+## Add .env to root directory:
+
+```
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
 ## Development Mode:
 
 Open your terminal or command prompt.

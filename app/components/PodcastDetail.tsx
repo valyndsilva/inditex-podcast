@@ -32,9 +32,12 @@ export default function PodcastDetail({ podcastId }: Props) {
         // Delay the fetch for 1 seconds
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        const response = await fetch(`/api/podcast/${podcastId}`, {
-          next: { revalidate: 86400 },
-        }); //revalidate response after 24 hrs has passed
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/podcast/${podcastId}`,
+          {
+            next: { revalidate: 86400 },
+          }
+        ); //revalidate response after 24 hrs has passed
         const podcastData = await response.json();
         // console.log(podcastData);
         // Store the fetched data in the 'podcastDetail' state
